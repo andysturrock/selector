@@ -1,8 +1,8 @@
-import {WebClient, LogLevel, WebAPIPlatformError} from "@slack/web-api";
-import {getSecretValue} from './awsAPI';
-import {Block, KnownBlock} from "@slack/bolt";
-import util from 'util';
+import { Block, KnownBlock } from "@slack/types";
+import { LogLevel, WebAPIPlatformError, WebClient } from "@slack/web-api";
 import axios from 'axios';
+import util from 'util';
+import { getSecretValue } from './awsAPI';
 
 async function createClient() {
   const slackBotToken = await getSecretValue('Selector', 'slackBotToken');
