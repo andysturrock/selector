@@ -7,7 +7,7 @@ rm -rf ../lambda-src/dist
 
 echo "Typechecking files..."
 ( cd ../lambda-src &&
- tsc --noEmit --project ./tsconfig-build.json
+ npx tsc --noEmit --project ./tsconfig-build.json
 )
 
 lambdas="handleSlashCommand \
@@ -20,13 +20,13 @@ do
   echo "Bundling ${lambda}..."
   # The enclosing in () means "execute in subshell", so this script doesn't change directory itself
   ( cd ../lambda-src && \
-    esbuild ./ts-src/${lambda}.ts \
+    npx esbuild ./ts-src/${lambda}.ts \
     --bundle \
     --external:aws-sdk \
     --sourcemap \
     --tsconfig=./tsconfig-build.json \
     --platform=node \
-    --target=node18 \
+    --target=node22 \
     --tree-shaking=true \
     --minify \
     --outdir=./dist/${lambda}

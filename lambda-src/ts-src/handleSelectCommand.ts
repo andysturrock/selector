@@ -1,5 +1,5 @@
-import { KnownBlock, SectionBlock } from '@slack/types';
-import { getChannelMembers, postErrorMessageToResponseUrl, postMessage, PrivateConversationNonMemberError, SlashCommandPayload } from './slackAPI';
+import {KnownBlock, SectionBlock} from '@slack/types';
+import {getChannelMembers, postErrorMessageToResponseUrl, postMessage, PrivateConversationNonMemberError, SlashCommandPayload} from './slackAPI';
 
 export async function handleSelectCommand(event: SlashCommandPayload): Promise<void> {
 
