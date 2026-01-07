@@ -9,14 +9,6 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-  - package-ecosystem: "npm"
-    directory: "/lambda-src"
-    schedule:
-      interval: "daily"
-  - package-ecosystem: "npm"
-    directory: "/cdk"
-    schedule:
-      interval: "daily"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:

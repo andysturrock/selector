@@ -5,7 +5,7 @@ const { defineConfig } = require('eslint/config');
 
 module.exports = defineConfig([
   {
-    ignores: ["**/node_modules", "**/dist/", "**/build.js", "**/jest.config.ts"],
+    ignores: ["**/node_modules/", "node_modules/", "**/dist/", "dist/", "**/build.js", "**/jest.config.ts", "cdk/cdk.out/"],
   },
   js.configs.recommended,
   ...tseslint.configs.recommended,
