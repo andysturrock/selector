@@ -2,8 +2,7 @@
   "scripts": {
     "lint": "../../node_modules/.bin/eslint .",
     "fix": "eslint . --fix",
-    "test": "jest",
-    "generate": "ohm generateBundles --withTypes 'ts-src/*.ohm'"
+    "test": "jest"
   },
   "devDependencies": {
     "@aws-sdk/client-lambda": "^3.965.0",
