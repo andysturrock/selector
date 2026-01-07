@@ -1,8 +1,8 @@
-import { Block, KnownBlock } from "@slack/types";
-import { LogLevel, WebAPIPlatformError, WebClient } from "@slack/web-api";
+import {Block, KnownBlock} from "@slack/types";
+import {LogLevel, WebAPIPlatformError, WebClient} from "@slack/web-api";
 import axios from 'axios';
 import util from 'util';
-import { getSecretValue } from './awsAPI';
+import {getSecretValue} from './awsAPI';
 
 async function createClient() {
   const slackBotToken = await getSecretValue('Selector', 'slackBotToken');
@@ -14,8 +14,8 @@ async function createClient() {
 
 export class PrivateConversationNonMemberError extends Error {
   channelId: string;
-  constructor(channelId:string, cause?: unknown) {
-    super(`Cannot list members of channel ${channelId}`, {cause});
+  constructor(channelId: string, cause?: unknown) {
+    super(`Cannot list members of channel ${channelId}`, {cause: cause as Error});
     this.channelId = channelId;
   }
 }
@@ -38,15 +38,15 @@ export async function getChannelMembers(channelId: string) {
       channel: channelId
     });
     const channelMembers: string[] = [];
-    if(!membersResult.members) {
+    if (!membersResult.members) {
       console.warn(`Cannot get members of channel ${channelId}`);
       return channelMembers;
     }
-    for(const member of membersResult.members) {
+    for (const member of membersResult.members) {
       const userResult = await client.users.info({
         user: member
       });
-      if(!userResult.user?.is_bot) {
+      if (!userResult.user?.is_bot) {
         channelMembers.push(member);
       }
       else {
@@ -59,14 +59,14 @@ export async function getChannelMembers(channelId: string) {
   catch (error) {
     // This is about as good as we can do at catching when we get an error because we aren't a member
     // of a private channel/DM and therefore we can't list the members.
-    if(isWebAPIPlatformError(error) && !error.data.ok && error.data.error === "channel_not_found") {
+    if (isWebAPIPlatformError(error) && !error.data.ok && error.data.error === "channel_not_found") {
       throw new PrivateConversationNonMemberError(channelId, error);
     }
     throw error;
   }
 }
 
-export async function postMessage(channelId: string, text:string, blocks: (KnownBlock | Block)[]) {
+export async function postMessage(channelId: string, text: string, blocks: (KnownBlock | Block)[]) {
   const client = await createClient();
   await client.chat.postMessage({
     channel: channelId,
@@ -82,7 +82,7 @@ export async function postToResponseUrl(responseUrl: string, response_type: "eph
     blocks
   };
   const result = await axios.post(responseUrl, messageBody);
-  if(result.status !== 200) {
+  if (result.status !== 200) {
     throw new Error(`Error ${util.inspect(result.statusText)} posting response: ${util.inspect(result.data)}`);
   }
   return result;

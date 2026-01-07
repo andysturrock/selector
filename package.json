@@ -1,0 +1,43 @@
+{
+  "name": "selector",
+  "version": "1.0.0",
+  "description": "Slack app that selects a name at random from channel members",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "npm test --workspaces",
+    "build": "npm run build --workspace=cdk",
+    "deploy": "npm run deploy --workspace=cdk"
+  },
+  "workspaces": [
+    "cdk",
+    "lambda-src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andysturrock/selector.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/andysturrock/selector/issues"
+  },
+  "homepage": "https://github.com/andysturrock/selector#readme",
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.3",
+    "@eslint/js": "^9.39.2",
+    "@tsconfig/node22": "^22.0.5",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.0.3",
+    "esbuild": "^0.27.2",
+    "eslint": "^9.39.2",
+    "globals": "^17.0.0",
+    "jest": "^30.2.0",
+    "ts-jest": "^29.4.6",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.52.0"
+  }
+}
