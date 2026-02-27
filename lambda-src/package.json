@@ -9,7 +9,7 @@
     "@aws-sdk/client-secrets-manager": "^3.999.0",
     "@slack/web-api": "^7.14.1",
     "@tsconfig/node22": "^22.0.5",
-    "@types/aws-lambda": "^8.10.160",
+    "@types/aws-lambda": "^8.10.161",
     "eslint-plugin-node": "^11.1.0",
     "ts-node-dev": "^2.0.0"
   },
