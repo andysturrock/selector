@@ -5,7 +5,7 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@aws-sdk/client-lambda": "^3.1090.0",
+    "@aws-sdk/client-lambda": "^3.1091.0",
     "@aws-sdk/client-secrets-manager": "^3.1089.0",
     "@slack/web-api": "^8.0.0",
     "@tsconfig/node22": "^22.0.5",
