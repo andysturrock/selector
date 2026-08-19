@@ -8,7 +8,7 @@
     "@aws-sdk/client-lambda": "^3.1111.0",
     "@aws-sdk/client-secrets-manager": "^3.1107.0",
     "@slack/web-api": "^8.0.0",
-    "@tsconfig/node22": "^22.0.5",
+    "@tsconfig/node22": "^22.0.6",
     "@types/aws-lambda": "^8.10.162",
     "eslint-plugin-node": "^11.1.0",
     "ts-node-dev": "^2.0.0"
