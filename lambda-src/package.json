@@ -7,7 +7,7 @@
   "devDependencies": {
     "@aws-sdk/client-lambda": "^3.1120.0",
     "@aws-sdk/client-secrets-manager": "^3.1117.0",
-    "@slack/web-api": "^8.0.0",
+    "@slack/web-api": "^8.1.1",
     "@tsconfig/node22": "^22.0.6",
     "@types/aws-lambda": "^8.10.162",
     "eslint-plugin-node": "^11.1.0",
